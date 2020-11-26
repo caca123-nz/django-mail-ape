@@ -32,6 +32,9 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(" ")
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
+    'mailinglist',
+    'markdownify',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
