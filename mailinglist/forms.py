@@ -1,5 +1,6 @@
 # mailinglist/forms.py
 from django import forms
+from django.contrib.auth import get_user_model
 
 from mailinglist.models import Subscriber, MailingList, Message
 
@@ -34,3 +35,17 @@ class MessageForm(forms.ModelForm):
   class Meta:
     model = Message
     fields = ["mailing_list", "subject", "body", ]
+
+class MailingListForm(forms.ModelForm):
+  owner = forms.ModelChoiceField(
+    widget=forms.HiddenInput,
+    queryset=get_user_model().objects.all(),
+    disabled=True
+  )
+  name = forms.CharField(
+    widget=forms.TextInput(attr={"class": "form-control"})
+  )
+
+  class Meta:
+    model = MailingList
+    fields = ["owner", "name", ]
