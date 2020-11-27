@@ -25,11 +25,11 @@ class MessageForm(forms.ModelForm):
     disabled = True
   )
   subject = forms.CharField(
-    widget=forms.TextInput(attr={"class": "form-control"})
+    widget=forms.TextInput(attrs={"class": "form-control"})
   )
 
   body = forms.CharField(
-    widget=forms.Textarea(attr={"class": "form-control"})
+    widget=forms.Textarea(attrs={"class": "form-control"})
   )
 
   class Meta:
@@ -43,7 +43,7 @@ class MailingListForm(forms.ModelForm):
     disabled=True
   )
   name = forms.CharField(
-    widget=forms.TextInput(attr={"class": "form-control"})
+    widget=forms.TextInput(attrs={"class": "form-control"})
   )
 
   class Meta:
