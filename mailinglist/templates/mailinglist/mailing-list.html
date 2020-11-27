@@ -1,20 +1,21 @@
-{% extends "base.html" %} {% block title %} Mailing Lists {% endblock %} {%
-block main %}
+{% extends "base.html" %} {%block main %}
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h1>Your Mailing Lists</h1>
       <p>
-        <a href="{% url 'mailinglist:create-mailing-list' %}" class="btn"
+        <a
+          href="{% url 'mailinglist:create-mailing-list' %}"
+          class="btn btn-danger"
           >New List</a
         >
       </p>
       <h4>Your Lists:</h4>
       <ul>
-        {% for list in mailing-list %}
+        {% for mailinglist in mailing_list %}
         <li>
           <a href="{% url 'mailinglist:manage-mailing-list' pk=list.id %}"
-            >{{list.name}}</a
+            >{{mailinglist.name}}</a
           >
         </li>
         {% endfor %}

@@ -6,7 +6,6 @@ from mailinglist.forms import MailingListForm
 from mailinglist.models import MailingList
 
 class MailingListView(LoginRequiredMixin, ListView):
-  context_object_name = "mailing-list"
   template_name = "mailinglist/mailing-list.html"
 
   def get_queryset(self):

@@ -2,8 +2,8 @@
 {% block main %}
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1>Create Mailing List</h1>
+    <div class="col-md-auto mx-auto">
+      <h1 class="text-muted text-center">Register</h1>
       <form method="post">
         {% csrf_token %} {{form.as_p}}
         <button type="submit" class="btn btn-danger">Create</button>
