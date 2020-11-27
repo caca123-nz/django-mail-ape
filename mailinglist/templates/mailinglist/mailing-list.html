@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %} Mailing Lists {% endblock %} {%
+block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Your Mailing Lists</h1>
+      <p>
+        <a href="{% url 'mailinglist:create-mailing-list' %}" class="btn"
+          >New List</a
+        >
+      </p>
+      <h4>Your Lists:</h4>
+      <ul>
+        {% for list in mailing-list %}
+        <li>
+          <a href="{% url 'mailinglist:manage-mailing-list' pk=list.id %}"
+            >{{list.name}}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
