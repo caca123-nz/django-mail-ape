@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %} Create Mailing Lists {% endblock %}
+{% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Create Mailing List</h1>
+      <form method="post">
+        {% csrf_token %} {{form.as_p}}
+        <button type="submit" class="btn btn-daner">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
