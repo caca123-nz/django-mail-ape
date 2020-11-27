@@ -26,10 +26,11 @@ class Subscriber(models.Model):
   id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
   email = models.EmailField()
   confirmed = models.BooleanField(default=False)
-  mailing_list = models.OneToOneField(MailingList, on_delete=models.CASCADE)
+  mailing_list = models.ForeignKey(MailingList, on_delete=models.CASCADE)
 
   class Meta:
     db_table = "subscriber"
+    unique_together = ["email", "mailing_list"]
 
 class Message(models.Model):
   id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
